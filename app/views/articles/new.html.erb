@@ -2,13 +2,13 @@
 
 <%= form_with scope: :article, url: articles_path ,local: true do |form| %>  <!-- identifying scope  articles for this form --> 
 	
-	<% if @article.errors.any? %>
+	<% if @article.errors.any? %>  <!-- verifying if there are any errors --> 
 		<div id="error_explanation">
 			<h2>
-				<%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved.
+				<%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved.  <!-- Shows a quantity of errors --> 
 			</h2>
 			<ul>
-				<% @article.errors.full_messages.each do |msg| %>
+				<% @article.errors.full_messages.each do |msg| %> <!-- Shows the specific error --> 
 					<li> <%= msg %> </li>
 				<% end %>
 			</ul>
